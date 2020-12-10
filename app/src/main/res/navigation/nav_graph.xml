@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.newproject.fragment.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificatinonFragment"
+            app:destination="@id/navigation_notificatinon" />
+        <action
+            android:id="@+id/action_homeFragment_to_dashBoard2"
+            app:destination="@id/navigation_dashBoard" />
+        <action
+            android:id="@+id/action_navigation_home_to_davalebisFragmenti"
+            app:destination="@id/navigation_something" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_dashBoard"
+        tools:layout="@layout/fragment_dashboard"
+        android:name="com.example.newproject.fragment.DashBoard"
+        android:label="DashBoard" />
+    <fragment
+        android:id="@+id/navigation_notificatinon"
+        tools:layout="@layout/fragment_notification"
+        android:name="com.example.newproject.fragment.NotificatinonFragment"
+        android:label="NotificatinonFragment" >
+        <argument
+            android:name="number"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_something"
+        android:name="com.example.newproject.davalebisFragmenti"
+        android:label="fragment_davalebis_fragmenti"
+        tools:layout="@layout/fragment_davalebis_fragmenti" />
+</navigation>
